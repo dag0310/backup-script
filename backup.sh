@@ -19,7 +19,7 @@ if [[ ! -f $PATHS_FILE ]]; then
 fi
 
 echo "Creating archive: $BACKUP_FILEPATH"
-sudo tar -czf $BACKUP_FILEPATH -T $PATHS_FILE
+sudo tar -czf $BACKUP_FILEPATH --exclude node_modules -T $PATHS_FILE
 
 echo "Transferring archive to $CONN_STRING:$REMOTE_PATH"
 ssh $CONN_STRING mkdir -p $REMOTE_PATH/
