@@ -9,7 +9,7 @@ else
 fi
 
 PATHS_FILE="$(dirname "$0")/paths.txt"
-BACKUP_FILEPATH="/tmp/$BACKUP_PREFIX$(date +"%Y-%m-%d_%H-%M-%S").tar.gz"
+BACKUP_FILEPATH="/ram-dir/$BACKUP_PREFIX$(date +"%Y-%m-%d_%H-%M-%S").tar.gz"
 CONN_STRING=$REMOTE_USER@$REMOTE_HOST
 # MAX_BACKUPS=${1:-1}
 
