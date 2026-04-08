@@ -9,7 +9,7 @@ Define config parameters in `backup.conf` like this:
 REMOTE_USER=username
 REMOTE_HOST=example.com
 REMOTE_PATH=private/backups
-BACKUP_PREFIX=my_backup-
+TMP_BACKUP_PATH_WITH_FILE_PREFIX=/tmp/my_backup-
 MAX_BACKUPS=7
 ```
 
