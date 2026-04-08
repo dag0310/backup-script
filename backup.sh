@@ -18,8 +18,13 @@ if [[ ! -f $PATHS_FILE ]]; then
     exit 1
 fi
 
+#TMP_MONGODB_PATH="/tmp/mongodb_dump"
+#mongodump -o $TMP_MONGODB_PATH
+
 echo "Creating archive: $BACKUP_FILEPATH"
 sudo tar -czf $BACKUP_FILEPATH --exclude node_modules -T $PATHS_FILE
+
+#rm -rf $TMP_MONGODB_PATH
 
 echo "Transferring archive to $CONN_STRING:$REMOTE_PATH"
 ssh $CONN_STRING mkdir -p $REMOTE_PATH/
