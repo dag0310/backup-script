@@ -22,7 +22,7 @@ fi
 #mongodump -o $TMP_MONGODB_PATH
 
 echo "Creating archive: $BACKUP_FILEPATH"
-sudo tar -czf $BACKUP_FILEPATH --exclude node_modules -T $PATHS_FILE
+sudo tar -czf $BACKUP_FILEPATH --exclude node_modules --exclude .next -T $PATHS_FILE
 
 #rm -rf $TMP_MONGODB_PATH
 
