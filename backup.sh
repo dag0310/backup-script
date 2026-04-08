@@ -29,6 +29,7 @@ sudo tar -czf $BACKUP_FILEPATH --exclude node_modules -T $PATHS_FILE
 echo "Transferring archive to $CONN_STRING:$REMOTE_PATH"
 ssh $CONN_STRING mkdir -p $REMOTE_PATH/
 rsync -vrlcz -e ssh $BACKUP_FILEPATH $CONN_STRING:$REMOTE_PATH
+#scp -v $BACKUP_FILEPATH $CONN_STRING:$REMOTE_PATH/ # Optional upload method
 
 sudo rm -f $BACKUP_FILEPATH
 
